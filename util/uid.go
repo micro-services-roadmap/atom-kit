@@ -19,3 +19,15 @@ func GenerateUid() string {
 
 	return fmt.Sprintf("%d", time.Now().UnixNano())
 }
+
+func GenerateOrderSN(memberId int64) string {
+	formattedTime := time.Now().Format("060102150405")
+
+	return fmt.Sprintf("%s%07d", formattedTime, memberId)
+}
+
+func GenerateRefundSN(orderID, orderItemID int64) string {
+	formattedTime := time.Now().Format("060102150405")
+
+	return fmt.Sprintf("%s%07d%07d", formattedTime, orderID, orderItemID)
+}
