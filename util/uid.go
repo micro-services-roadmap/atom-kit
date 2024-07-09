@@ -27,7 +27,6 @@ func GenerateOrderSN(memberId int64) string {
 }
 
 func GenerateRefundSN(orderID, orderItemID int64) string {
-	formattedTime := time.Now().Format("060102150405")
 
-	return fmt.Sprintf("%s%07d%07d", formattedTime, orderID, orderItemID)
+	return fmt.Sprintf("%s%07d%07d", "Refund", orderID, orderItemID)
 }
