@@ -3,6 +3,7 @@ package internal
 import (
 	"fmt"
 	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/zeromicro/go-zero/core/logx"
 	"gorm.io/gorm/logger"
 )
 
@@ -30,11 +31,12 @@ func (w *writer) Printf(message string, data ...interface{}) {
 	case "pgsql":
 		logType = kg.C.Pgsql.LogType
 	}
-	if len(logType) == 0 || logType == Console {
-		w.Writer.Printf(message, data...)
-	} else if logType == Zap {
+	w.Writer.Printf(message, data...)
+	if logType == Zap {
 		kg.L.Info(fmt.Sprintf(message+"\n", data...))
+		w.Writer.Printf(message, data...)
 	} else if logType == GoZero {
-		// logx.Debug(fmt.Sprintf(message+"\n", data...))
+		logx.Debug(fmt.Sprintf(message+"\n", data...))
+		w.Writer.Printf(message, data...)
 	}
 }
