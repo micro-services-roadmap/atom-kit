@@ -12,7 +12,7 @@ require (
 	github.com/golang-migrate/migrate/v4 v4.17.1
 	github.com/google/uuid v1.6.0
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
-	github.com/micro-services-roadmap/oneid-core v0.2.2
+	github.com/micro-services-roadmap/oneid-core v0.2.3
 	github.com/redis/go-redis/v9 v9.5.3
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/viper v1.19.0

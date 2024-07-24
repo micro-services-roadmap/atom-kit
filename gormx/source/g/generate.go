@@ -28,7 +28,7 @@ var FieldOpts = []gen.ModelOpt{autoCreateTimeField, autoUpdateTimeField, softDel
 // https://github.com/Alice52/go-tutorial/issues/5#issuecomment-1286325129
 
 // Deprecated: use G2
-func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
+func G(dbTpe, dsn, outputDir, relationYaml string, opts ...gen.ModelOpt) (*gen.Generator, *gorm.DB) {
 	var DSN string
 	if v, err := jasypt.New().Decrypt(dsn); err != nil {
 		DSN = dsn
@@ -45,10 +45,10 @@ func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 		panic("unknown db type")
 	}
 
-	return genCore(dialector, outputDir, relationYaml)
+	return genCore(dialector, outputDir, relationYaml, opts...)
 }
 
-func G2(outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
+func G2(outputDir, relationYaml string, opts ...gen.ModelOpt) (*gen.Generator, *gorm.DB) {
 	var dialector gorm.Dialector
 	switch kg.C.System.DbType {
 	case kg.DbMysql:
@@ -59,10 +59,10 @@ func G2(outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 		panic("unknown db type")
 	}
 
-	return genCore(dialector, outputDir, relationYaml)
+	return genCore(dialector, outputDir, relationYaml, opts...)
 }
 
-func genCore(dialector gorm.Dialector, outputDir string, relationYaml string) (*gen.Generator, *gorm.DB) {
+func genCore(dialector gorm.Dialector, outputDir string, relationYaml string, opts ...gen.ModelOpt) (*gen.Generator, *gorm.DB) {
 	// 连接数据库
 	db, err := gorm.Open(dialector)
 	if err != nil {
@@ -81,15 +81,25 @@ func genCore(dialector gorm.Dialector, outputDir string, relationYaml string) (*
 
 	g.UseDB(db)
 
-	dataMap := map[string]func(detailType gorm.ColumnType) (dataType string){
-		"tinyint":   func(detailType gorm.ColumnType) (dataType string) { return "int64" },
-		"smallint":  func(detailType gorm.ColumnType) (dataType string) { return "int64" },
-		"mediumint": func(detailType gorm.ColumnType) (dataType string) { return "int64" },
-		"bigint":    func(detailType gorm.ColumnType) (dataType string) { return "int64" },
-		"int":       func(detailType gorm.ColumnType) (dataType string) { return "int64" },
+	var columOfInt = func(columnType gorm.ColumnType) (dataType string) {
+		if n, ok := columnType.Nullable(); ok && n {
+			return "*int64"
+		}
+		return "int64"
 	}
+	dataMap := map[string]func(detailType gorm.ColumnType) (dataType string){
+		"tinyint":   columOfInt,
+		"smallint":  columOfInt,
+		"mediumint": columOfInt,
+		"bigint":    columOfInt,
+		"int":       columOfInt,
+		"int2":      columOfInt, // pgsql type
+		"int4":      columOfInt, // pgsql type
+		"int8":      columOfInt, // pgsql type
+	}
+
 	g.WithDataTypeMap(dataMap)
-	g.WithOpts(FieldOpts...)
+	g.WithOpts(append(FieldOpts, opts...)...)
 
 	ggy.NewYamlGenerator(relationYaml).UseGormGenerator(g).Generate(FieldOpts...) // fieldOpts is not used
 	//g.ApplyBasic(g.GenerateAllTable()...) // will lose relation, so donot use it after NewYamlGenerator
