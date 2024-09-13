@@ -2,8 +2,9 @@ package ipx
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/kg"
 	"testing"
+
+	"github.com/micro-services-roadmap/kit-common/kg"
 )
 
 func TestQuery(t *testing.T) {
@@ -23,7 +24,7 @@ func TestQuery(t *testing.T) {
 func TestQueryWithKey(t *testing.T) {
 	kg.C.System.IPQueryKey = "xxxx"
 
-	if info, err := QueryWithKey("138.197.101.126"); err != nil {
+	if info, err := QueryWithKey("138.197.101.126", "xxxx"); err != nil {
 		panic(err)
 	} else {
 		fmt.Println(info)

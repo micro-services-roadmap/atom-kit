@@ -12,13 +12,13 @@ import (
 const freeUrl = "https://api.ip2location.io?ip=%s"
 const keyUrl = "https://api.ip2location.io?key=%s&ip=%s"
 
-func Query(ip string) (*IPInfo, error) {
+func Query(ip string, key ...string) (*IPInfo, error) {
 	free, err := QueryFree(ip)
 	if err == nil {
 		return free, err
 	}
 
-	return QueryWithKey(ip)
+	return QueryWithKey(ip, key...)
 }
 
 func QueryFree(ip string) (*IPInfo, error) {
@@ -46,8 +46,14 @@ func QueryFree(ip string) (*IPInfo, error) {
 	}
 }
 
-func QueryWithKey(ip string) (*IPInfo, error) {
-	url := fmt.Sprintf(keyUrl, kg.C.System.IPQueryKey, ip)
+func QueryWithKey(ip string, key ...string) (*IPInfo, error) {
+	var ak string
+	if len(key) > 0 {
+		ak = key[0]
+	} else {
+		ak = kg.C.System.IPQueryKey
+	}
+	url := fmt.Sprintf(keyUrl, ak, ip)
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Printf("Failed to make request: %v\n", err)
