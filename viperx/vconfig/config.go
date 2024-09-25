@@ -36,4 +36,5 @@ type System struct {
 	OssType      string `mapstructure:"oss-type" json:"oss-type" yaml:"oss-type"` // Oss类型
 	RouterPrefix string `mapstructure:"router-prefix" json:"router-prefix" yaml:"router-prefix"`
 	IPQueryKey   string `mapstructure:"ip-query-key" json:"ip-query-key" yaml:"ip-query-key"`
+	CurrencyKey  string `mapstructure:"currency-key" json:"currency-key" yaml:"currency-key"`
 }
