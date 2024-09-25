@@ -1,3 +1,7 @@
+## env
+
+1. go version must more than 1.21
+
 ## kit-logger
 
 1. zapx

@@ -4,7 +4,34 @@ import (
 	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
 	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
+	"strings"
 )
+
+var Unscoped = func(db *gorm.DB) *gorm.DB { return db.Unscoped() }
+
+func ILike(column *string) string {
+	if column == nil {
+		return ""
+	}
+
+	return ILikeHelper(*column)
+}
+
+func ILikeHelper(column string) string {
+	if len(column) == 0 {
+		return ""
+	}
+
+	return "%" + strings.ToLower(column) + "%"
+}
+
+func Page[T int | int8 | int16 | int32 | int64](current, pageSize T) (offset, limit int) {
+
+	offset = int((current - 1) * pageSize)
+	limit = int(pageSize)
+
+	return
+}
 
 func InitDB() *gorm.DB {
 	dbType := kg.C.System.DbType

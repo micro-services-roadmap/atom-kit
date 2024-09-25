@@ -15,7 +15,7 @@ func ParseAgent(userAgent string) (browser string, browserVersion string, os str
 	// Regular expressions for different browsers, OS, and devices
 	browserRegex := regexp.MustCompile(`(?i)(firefox|msie|chrome|safari|opera|edg|edge|trident)\/?([0-9.]*)`)
 	osRegex := regexp.MustCompile(`(?i)(windows nt|mac os x|android|iphone os|linux)`)
-	deviceRegex := regexp.MustCompile(`(?i)(mobile|tablet|ipad|ipod|windows|android|windows phone|kindle|iphone)`)
+	deviceRegex := regexp.MustCompile(`(?i)(mobile|tablet|ipad|ipod|windows|android|windows phone|kindle|iphone|mac|X11)`)
 
 	// Find browser information
 	browserMatches := browserRegex.FindStringSubmatch(userAgent)
