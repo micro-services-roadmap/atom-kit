@@ -11,3 +11,7 @@ func TestGenerateRefundSN(t *testing.T) {
 
 	println(GenerateRefundSN(1, 1))
 }
+
+func TestGenerateCode(t *testing.T) {
+	println(GenerateCode())
+}
