@@ -14,7 +14,7 @@ require (
 	github.com/gookit/goutil v0.6.16
 	github.com/jinzhu/copier v0.4.0
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
-	github.com/micro-services-roadmap/oneid-core v0.2.3
+	github.com/micro-services-roadmap/oneid-core v0.2.4
 	github.com/redis/go-redis/v9 v9.6.1
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/viper v1.19.0
