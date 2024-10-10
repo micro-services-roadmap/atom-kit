@@ -10,6 +10,18 @@ func GrpcError(err error) error {
 		return nil
 	}
 
-	ge := status.Convert(err)
-	return model.NewError(int(ge.Code()), ge.Message(), err)
+	if s, ok := status.FromError(err); ok {
+		return model.NewError(int(s.Code()), s.Message(), err)
+	} else {
+		return err
+	}
+}
+
+func IsGrpcError(err error) bool {
+	if err == nil {
+		return false
+	}
+
+	_, ok := status.FromError(err)
+	return ok
 }
