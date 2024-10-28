@@ -177,8 +177,8 @@ github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D
 github.com/mattn/go-sqlite3 v1.14.8/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
 github.com/mattn/go-sqlite3 v1.14.16 h1:yOQRA0RpS5PFz/oikGwBEqvAWhWg5ufRz4ETLjwpU1Y=
 github.com/mattn/go-sqlite3 v1.14.16/go.mod h1:2eHXhiwb8IkHr+BDWZGa96P6+rkvnG63S2DGjv9HUNg=
-github.com/micro-services-roadmap/oneid-core v0.2.3 h1:WRCgXhHIRo4bHjNUrSFF5VvlCgTWquUqMr1Jx12JDqE=
-github.com/micro-services-roadmap/oneid-core v0.2.3/go.mod h1:YU6CWMlLunkA/KhOcaWwsF9+6GLIhL84stklhhEEU68=
+github.com/micro-services-roadmap/oneid-core v0.2.6 h1:6Frwa4WED8HQiVHag6Xj7TaULQOEm0tSrz8ygDia2z4=
+github.com/micro-services-roadmap/oneid-core v0.2.6/go.mod h1:YU6CWMlLunkA/KhOcaWwsF9+6GLIhL84stklhhEEU68=
 github.com/microsoft/go-mssqldb v1.0.0 h1:k2p2uuG8T5T/7Hp7/e3vMGTnnR0sU4h8d1CcC71iLHU=
 github.com/microsoft/go-mssqldb v1.0.0/go.mod h1:+4wZTUnz/SV6nffv+RRRB/ss8jPng5Sho2SmM1l2ts4=
 github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
