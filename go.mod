@@ -1,6 +1,7 @@
 module github.com/micro-services-roadmap/kit-common
 
 go 1.22
+toolchain go1.22.9
 
 require (
 	github.com/Mikaelemmmm/sql2pb v1.0.5
@@ -35,7 +36,7 @@ require (
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.27.0
 	golang.org/x/time v0.6.0
-	google.golang.org/grpc v1.66.1
+	google.golang.org/grpc v1.68.0
 	google.golang.org/protobuf v1.34.2
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/driver/postgres v1.5.9
