@@ -2,7 +2,7 @@ package limiter
 
 import (
 	"context"
-	"github.com/micro-services-roadmap/oneid-core/model"
+	"github.com/micro-services-roadmap/oneid-core/modelo"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,7 +17,7 @@ type Allower interface {
 func NewErrorLimiter(limit Allower) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if !limit.Allow() {
-			c.JSON(http.StatusOK, gin.H{"code": model.ERROR, "msg": ErrLimited.Error()})
+			c.JSON(http.StatusOK, gin.H{"code": modelo.ERROR, "msg": ErrLimited.Error()})
 			c.Abort()
 			return
 		}
@@ -34,7 +34,7 @@ type Waiter interface {
 func NewDelayLimiter(limit Waiter) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if err := limit.Wait(c); err != nil {
-			c.JSON(http.StatusOK, gin.H{"code": model.ERROR, "msg": err.Error()})
+			c.JSON(http.StatusOK, gin.H{"code": modelo.ERROR, "msg": err.Error()})
 			c.Abort()
 			return
 		}

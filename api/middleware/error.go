@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/util/email"
+	"github.com/micro-services-roadmap/kit-common/utilx/email"
 	"net"
 	"net/http"
 	"net/http/httputil"

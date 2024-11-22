@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/micro-services-roadmap/oneid-core/model"
+	"github.com/micro-services-roadmap/oneid-core/modelo"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -9,7 +9,7 @@ import (
 
 func Result(code int, data interface{}, msg string, c *gin.Context) {
 	// 开始时间
-	c.JSON(http.StatusOK, model.Response{
+	c.JSON(http.StatusOK, modelo.Response{
 		Code: code,
 		Data: data,
 		Msg:  msg,
@@ -17,36 +17,36 @@ func Result(code int, data interface{}, msg string, c *gin.Context) {
 }
 
 func Ok(c *gin.Context) {
-	Result(model.SUCCESS, map[string]interface{}{}, "Success", c)
+	Result(modelo.SUCCESS, map[string]interface{}{}, "Success", c)
 }
 
 func OkWithMessage(message string, c *gin.Context) {
-	Result(model.SUCCESS, map[string]interface{}{}, message, c)
+	Result(modelo.SUCCESS, map[string]interface{}{}, message, c)
 }
 
 func OkWithData(data interface{}, c *gin.Context) {
-	Result(model.SUCCESS, data, "Success", c)
+	Result(modelo.SUCCESS, data, "Success", c)
 }
 
 func OkWithDetailed(data interface{}, message string, c *gin.Context) {
-	Result(model.SUCCESS, data, message, c)
+	Result(modelo.SUCCESS, data, message, c)
 }
 
 func Fail(c *gin.Context) {
-	Result(model.ERROR, map[string]interface{}{}, "Fail", c)
+	Result(modelo.ERROR, map[string]interface{}{}, "Fail", c)
 }
 
 func FailWithMessage(message string, c *gin.Context) {
-	Result(model.ERROR, map[string]interface{}{}, message, c)
+	Result(modelo.ERROR, map[string]interface{}{}, message, c)
 }
 
 func FailWithDetailed(data interface{}, message string, c *gin.Context) {
-	Result(model.ERROR, data, message, c)
+	Result(modelo.ERROR, data, message, c)
 }
 
-func FailWithError(data error) *model.Response {
-	return &model.Response{
-		Code: model.SUCCESS,
+func FailWithError(data error) *modelo.Response {
+	return &modelo.Response{
+		Code: modelo.SUCCESS,
 		Data: data.Error(),
 		Msg:  "Failed",
 	}

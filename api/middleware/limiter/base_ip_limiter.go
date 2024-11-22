@@ -2,7 +2,7 @@ package limiter
 
 import (
 	"errors"
-	"github.com/micro-services-roadmap/oneid-core/model"
+	"github.com/micro-services-roadmap/oneid-core/modelo"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -43,7 +43,7 @@ func (l *LimitBase) Process(check CheckFn, expire int, limit int) gin.HandlerFun
 
 	return func(c *gin.Context) {
 		if err := check(l.GenerationKey(c), expire, limit); err != nil {
-			c.JSON(http.StatusOK, gin.H{"code": model.ERROR, "msg": err.Error()})
+			c.JSON(http.StatusOK, gin.H{"code": modelo.ERROR, "msg": err.Error()})
 			c.Abort()
 			return
 		} else {

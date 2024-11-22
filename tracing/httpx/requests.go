@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/micro-services-roadmap/oneid-core/utilo"
 	"io"
 	"net/http"
 	nurl "net/url"
@@ -12,8 +13,6 @@ import (
 
 	"github.com/micro-services-roadmap/kit-common/tracing/httpx/internal"
 	"github.com/micro-services-roadmap/kit-common/tracing/trace"
-	"github.com/micro-services-roadmap/kit-common/util"
-
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/propagation"
@@ -70,7 +69,7 @@ func buildRequest(ctx context.Context, method, url string, data any) (*http.Requ
 
 	var val map[string]map[string]any
 	if data != nil {
-		val, err = util.Marshal(data)
+		val, err = utilo.Marshal(data)
 		if err != nil {
 			return nil, err
 		}
