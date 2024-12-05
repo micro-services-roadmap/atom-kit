@@ -2,9 +2,8 @@ package g
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/gormx/tenant/t"
-
 	"github.com/alice52/jasypt-go"
+	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
 	"github.com/micro-services-roadmap/kit-common/kg"
 	ggy "github.com/we7coreteam/gorm-gen-yaml"
 	"gorm.io/driver/mysql"
@@ -61,7 +60,7 @@ func G2(outputDir, relationYaml string, useTenant bool, opts ...gen.ModelOpt) (*
 	}
 
 	if useTenant {
-		opts = append(opts, gen.WithMethod(t.TenantHooks{}))
+		opts = append(opts, gen.WithMethod(tenant.TenantHooks{}))
 	}
 
 	return genCore(dialector, outputDir, relationYaml, opts...)
