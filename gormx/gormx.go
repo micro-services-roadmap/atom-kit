@@ -2,6 +2,7 @@ package gormx
 
 import (
 	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
+	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
 	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
 	"strings"
@@ -34,14 +35,21 @@ func Page[T int | int8 | int16 | int32 | int64](current, pageSize T) (offset, li
 }
 
 func InitDB() *gorm.DB {
+	var useTenant bool
 	dbType := kg.C.System.DbType
 	switch dbType {
 	case kg.DbMysql:
 		kg.DB = initialize.GormMysql(kg.C.Mysql.Migration)
+		useTenant = kg.C.Mysql.UseTenant
 	case kg.DbPgsql:
 		kg.DB = initialize.GormPgSQL(kg.C.Pgsql.Migration)
+		useTenant = kg.C.Mysql.UseTenant
 	default:
 		panic("unknown db type")
+	}
+
+	if useTenant {
+		tenant.RegisterBeforeQuery(kg.DB)
 	}
 
 	return kg.DB
