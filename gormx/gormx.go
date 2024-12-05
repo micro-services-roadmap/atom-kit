@@ -1,11 +1,12 @@
 package gormx
 
 import (
+	"strings"
+
 	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
 	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
 	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
-	"strings"
 )
 
 var Unscoped = func(db *gorm.DB) *gorm.DB { return db.Unscoped() }
