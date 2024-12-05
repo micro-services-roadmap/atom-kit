@@ -40,4 +40,5 @@ mysql:
   migration: true
   migration-path: file://./source/migrations
   migration-table: schema_migrations_xxx
+  use-tenant: true
 
