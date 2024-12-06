@@ -43,7 +43,7 @@ func InitDB() *gorm.DB {
 		useTenant = kg.C.Mysql.UseTenant
 	case kg.DbPgsql:
 		kg.DB = initialize.GormPgSQL(kg.C.Pgsql.Migration)
-		useTenant = kg.C.Mysql.UseTenant
+		useTenant = kg.C.Pgsql.UseTenant
 	default:
 		panic("unknown db type")
 	}
