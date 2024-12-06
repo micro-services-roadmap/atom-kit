@@ -2,8 +2,8 @@ package g
 
 import (
 	"fmt"
-
 	"github.com/alice52/jasypt-go"
+	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
 	"github.com/micro-services-roadmap/kit-common/kg"
 	ggy "github.com/we7coreteam/gorm-gen-yaml"
 	"gorm.io/driver/mysql"
@@ -48,7 +48,7 @@ func G(dbTpe, dsn, outputDir, relationYaml string, opts ...gen.ModelOpt) (*gen.G
 	return genCore(dialector, outputDir, relationYaml, opts...)
 }
 
-func G2(outputDir, relationYaml string, opts ...gen.ModelOpt) (*gen.Generator, *gorm.DB) {
+func G2(outputDir, relationYaml string, useTenant bool, opts ...gen.ModelOpt) (*gen.Generator, *gorm.DB) {
 	var dialector gorm.Dialector
 	switch kg.C.System.DbType {
 	case kg.DbMysql:
@@ -57,6 +57,10 @@ func G2(outputDir, relationYaml string, opts ...gen.ModelOpt) (*gen.Generator, *
 		dialector = postgres.Open(kg.C.Pgsql.Dsn())
 	default:
 		panic("unknown db type")
+	}
+
+	if useTenant {
+		opts = append(opts, gen.WithMethod(tenant.TenantHooks{}))
 	}
 
 	return genCore(dialector, outputDir, relationYaml, opts...)

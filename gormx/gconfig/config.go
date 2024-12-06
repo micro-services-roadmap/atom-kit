@@ -25,4 +25,5 @@ type GeneralDB struct {
 	Migration      bool   `mapstructure:"migration" json:"migration" yaml:"migration"`
 	MigrationPath  string `mapstructure:"migration-path" json:"migration-path" yaml:"migration-path"` // migration-path
 	MigrationTable string `mapstructure:"migration-table" json:"migration-table" yaml:"migration-table"`
+	UseTenant      bool   `mapstructure:"use-tenant" json:"use-tenant" yaml:"use-tenant"` // 使用多租户
 }
