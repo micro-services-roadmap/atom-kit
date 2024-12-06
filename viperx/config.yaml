@@ -38,6 +38,7 @@ mysql:
   singular: false
   log-zap: true
   migration-path: file://./source/migrations
+  use-tenant: true
 
 oneid-token:
   authentication-url: $kong/oneid/token
