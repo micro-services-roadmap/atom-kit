@@ -1,11 +1,15 @@
 package gormx
 
 import (
+	"fmt"
+	"gorm.io/gen/field"
+	"regexp"
+	"strings"
+
 	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
 	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
 	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
-	"strings"
 )
 
 var Unscoped = func(db *gorm.DB) *gorm.DB { return db.Unscoped() }
@@ -32,6 +36,54 @@ func Page[T int | int8 | int16 | int32 | int64](current, pageSize T) (offset, li
 	limit = int(pageSize)
 
 	return
+}
+
+const (
+	OrderAscending  = "ascending"
+	OrderAsc        = "asc"
+	OrderDescending = "descending"
+	OrderDesc       = "desc"
+)
+
+func DynamicSort(tableName, sortBy, sortOrder string, defaultSort ...field.Expr) field.Expr {
+	if len(sortBy) > 0 && len(sortOrder) == 0 {
+		sortOrder = OrderDescending
+	}
+	if len(sortBy) == 0 && len(sortOrder) > 0 {
+		sortOrder = ""
+	}
+
+	var orderExpr field.Expr
+	if len(sortBy) != 0 {
+		sortField := field.NewField(tableName, CamelToSnake(sortBy))
+
+		if strings.EqualFold(sortOrder, OrderAscending) || strings.EqualFold(sortOrder, OrderAsc) {
+			orderExpr = sortField.Asc()
+		} else {
+			orderExpr = sortField.Desc()
+		}
+	}
+
+	if orderExpr != nil {
+		return orderExpr
+	}
+
+	if len(defaultSort) != 0 {
+		return defaultSort[0]
+	}
+	fmt.Println("sortBy and default sort is empty")
+
+	return orderExpr // nil
+}
+
+// CamelToSnake 驼峰转换为下划线
+func CamelToSnake(s string) string {
+	re := regexp.MustCompile("([A-Z])")
+	snake := re.ReplaceAllStringFunc(s, func(m string) string {
+		return "_" + strings.ToLower(m)
+	})
+
+	return strings.TrimPrefix(snake, "_")
 }
 
 func InitDB() *gorm.DB {
