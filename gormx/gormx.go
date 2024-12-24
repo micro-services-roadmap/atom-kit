@@ -46,6 +46,14 @@ const (
 )
 
 func DynamicSort(tableName, sortBy, sortOrder string, defaultSort ...field.Expr) field.Expr {
+	return DynamicSortAgg(tableName, sortBy, sortOrder, nil, defaultSort...)
+}
+
+// DynamicSortAgg
+// order := DynamicSortAgg(q.TableName(), in.SortBy, in.SortOrder, func(f field.Field) field.Field { return f.Sum() }, q.ProductID.Desc())
+func DynamicSortAgg(tableName, sortBy, sortOrder string,
+	aggFunc func(field.Field) field.Field, // Function parameter for aggregation
+	defaultSort ...field.Expr) field.Expr {
 	if len(sortBy) > 0 && len(sortOrder) == 0 {
 		sortOrder = OrderDescending
 	}
@@ -56,7 +64,9 @@ func DynamicSort(tableName, sortBy, sortOrder string, defaultSort ...field.Expr)
 	var orderExpr field.Expr
 	if len(sortBy) != 0 {
 		sortField := field.NewField(tableName, CamelToSnake(sortBy))
-
+		if aggFunc != nil {
+			sortField = aggFunc(sortField)
+		}
 		if strings.EqualFold(sortOrder, OrderAscending) || strings.EqualFold(sortOrder, OrderAsc) {
 			orderExpr = sortField.Asc()
 		} else {
@@ -84,6 +94,10 @@ func CamelToSnake(s string) string {
 	})
 
 	return strings.TrimPrefix(snake, "_")
+}
+
+func Alias(fd field.Expr) string {
+	return CamelToSnake(fd.ColumnName().String())
 }
 
 func InitDB() *gorm.DB {
