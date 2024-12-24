@@ -5,7 +5,7 @@ go 1.22.7
 require (
 	github.com/Mikaelemmmm/sql2pb v1.0.5
 	github.com/alice52/jasypt-go v1.0.7
-	github.com/fsnotify/fsnotify v1.7.0
+	github.com/fsnotify/fsnotify v1.8.0
 	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6
 	github.com/gin-gonic/gin v1.10.0
 	github.com/go-sql-driver/mysql v1.8.1
