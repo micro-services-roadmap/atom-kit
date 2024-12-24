@@ -11,7 +11,7 @@ require (
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/golang-migrate/migrate/v4 v4.18.1
 	github.com/google/uuid v1.6.0
-	github.com/gookit/goutil v0.6.17
+	github.com/gookit/goutil v0.6.18
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/micro-services-roadmap/oneid-core v0.2.9
 	github.com/redis/go-redis/v9 v9.7.0
