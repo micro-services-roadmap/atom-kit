@@ -34,7 +34,7 @@ require (
 	go.uber.org/zap v1.27.0
 	golang.org/x/time v0.9.0
 	google.golang.org/grpc v1.69.2
-	google.golang.org/protobuf v1.36.1
+	google.golang.org/protobuf v1.36.6
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/driver/postgres v1.5.11
 	gorm.io/gen v0.3.26
