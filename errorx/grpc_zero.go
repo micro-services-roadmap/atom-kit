@@ -1,7 +1,7 @@
 package errorx
 
 import (
-	"github.com/micro-services-roadmap/oneid-core/modelo"
+	"github.com/kongmsr/oneid-core/modelo"
 	"github.com/zeromicro/go-zero/rest/httpx"
 	"net/http"
 )

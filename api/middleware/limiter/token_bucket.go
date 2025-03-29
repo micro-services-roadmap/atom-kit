@@ -2,7 +2,7 @@ package limiter
 
 import (
 	"context"
-	"github.com/micro-services-roadmap/oneid-core/modelo"
+	"github.com/kongmsr/oneid-core/modelo"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

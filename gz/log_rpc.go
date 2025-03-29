@@ -2,7 +2,7 @@ package gz
 
 import (
 	"context"
-	"github.com/micro-services-roadmap/oneid-core/modelo"
+	"github.com/kongmsr/oneid-core/modelo"
 	"github.com/zeromicro/go-zero/core/logx"
 	"google.golang.org/grpc"
 	gcodes "google.golang.org/grpc/codes"

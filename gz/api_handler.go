@@ -3,7 +3,7 @@ package gz
 import (
 	"context"
 	"github.com/gookit/goutil/strutil"
-	"github.com/micro-services-roadmap/oneid-core/utilo"
+	"github.com/kongmsr/oneid-core/utilo"
 	"google.golang.org/grpc/metadata"
 	"net/http"
 	"strings"

@@ -3,10 +3,10 @@ package oneid
 import (
 	"encoding/json"
 	"errors"
+	"github.com/kongmsr/oneid-core/httpo"
+	"github.com/kongmsr/oneid-core/modelo"
 	"github.com/micro-services-roadmap/kit-common/api/response"
 	"github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/oneid-core/httpo"
-	"github.com/micro-services-roadmap/oneid-core/modelo"
 	"net/http"
 )
 
