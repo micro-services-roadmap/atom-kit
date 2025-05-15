@@ -1,8 +1,8 @@
 package gormx
 
 import (
-	kg "github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/kit-common/redis/initialize"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
+	"github.com/micro-services-roadmap/atom-kit/redis/initialize"
 )
 
 func InitRedis() {

@@ -2,10 +2,10 @@ package initialize
 
 import (
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/micro-services-roadmap/kit-common/gormx/gconfig"
-	"github.com/micro-services-roadmap/kit-common/gormx/initialize/internal"
-	"github.com/micro-services-roadmap/kit-common/gormx/migration"
-	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/gormx/gconfig"
+	"github.com/micro-services-roadmap/atom-kit/gormx/initialize/internal"
+	"github.com/micro-services-roadmap/atom-kit/gormx/migration"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

@@ -3,7 +3,7 @@ package zapx
 import (
 	"testing"
 
-	"github.com/micro-services-roadmap/kit-common/zapx/config"
+	"github.com/micro-services-roadmap/atom-kit/zapx/config"
 )
 
 func TestZap(t *testing.T) {

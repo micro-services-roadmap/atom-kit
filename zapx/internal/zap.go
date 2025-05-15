@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"github.com/micro-services-roadmap/kit-common/zapx/config"
+	"github.com/micro-services-roadmap/atom-kit/zapx/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

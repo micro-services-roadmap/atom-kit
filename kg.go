@@ -1,9 +1,9 @@
 package kit
 
 import (
-	"github.com/micro-services-roadmap/kit-common/gormx"
-	"github.com/micro-services-roadmap/kit-common/viperx"
-	"github.com/micro-services-roadmap/kit-common/zapx"
+	"github.com/micro-services-roadmap/atom-kit/gormx"
+	"github.com/micro-services-roadmap/atom-kit/viperx"
+	"github.com/micro-services-roadmap/atom-kit/zapx"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/gorm"

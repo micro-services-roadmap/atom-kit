@@ -11,8 +11,8 @@ import (
 	nurl "net/url"
 	"strings"
 
-	"github.com/micro-services-roadmap/kit-common/tracing/httpx/internal"
-	"github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing/httpx/internal"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/propagation"

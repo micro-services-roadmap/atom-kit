@@ -1,7 +1,7 @@
 package g
 
 import (
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 	"gorm.io/gen"
 	"testing"
 )

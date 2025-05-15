@@ -2,8 +2,8 @@ package logx
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/kit-common/logx/rich"
+	"github.com/micro-services-roadmap/atom-kit/kg"
+	"github.com/micro-services-roadmap/atom-kit/logx/rich"
 )
 
 func GetTLogger(c *gin.Context) rich.Logger {

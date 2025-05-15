@@ -3,7 +3,7 @@ package ipx
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 	"go.uber.org/zap"
 	"io"
 	"net/http"

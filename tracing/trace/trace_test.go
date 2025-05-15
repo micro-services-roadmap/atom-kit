@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/micro-services-roadmap/kit-common/tracing"
+	"github.com/micro-services-roadmap/atom-kit/tracing"
 
 	"github.com/stretchr/testify/assert"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"

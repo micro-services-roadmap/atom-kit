@@ -8,8 +8,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	ztrace "github.com/micro-services-roadmap/kit-common/tracing/trace"
-	"github.com/micro-services-roadmap/kit-common/tracing/trace/tracetest"
+	ztrace "github.com/micro-services-roadmap/atom-kit/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace/tracetest"
 
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/otel/attribute"

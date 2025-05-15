@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 )
 
 func TestQuery(t *testing.T) {

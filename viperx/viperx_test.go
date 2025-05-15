@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	kg "github.com/micro-services-roadmap/kit-common/kg"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
 )
 
 func TestInitViper(_ *testing.T) {

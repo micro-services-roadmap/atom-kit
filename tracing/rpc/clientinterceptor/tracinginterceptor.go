@@ -4,8 +4,8 @@ import (
 	"context"
 	"io"
 
-	"github.com/micro-services-roadmap/kit-common/tracing"
-	ztrace "github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing"
+	ztrace "github.com/micro-services-roadmap/atom-kit/tracing/trace"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"

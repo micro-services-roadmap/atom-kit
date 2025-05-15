@@ -2,10 +2,10 @@ package vconfig
 
 import (
 	"github.com/kongmsr/oneid-core/modelo"
-	"github.com/micro-services-roadmap/kit-common/api/aconfig"
-	"github.com/micro-services-roadmap/kit-common/gormx/gconfig"
-	"github.com/micro-services-roadmap/kit-common/redis/rconfig"
-	"github.com/micro-services-roadmap/kit-common/zapx/config"
+	"github.com/micro-services-roadmap/atom-kit/api/aconfig"
+	"github.com/micro-services-roadmap/atom-kit/gormx/gconfig"
+	"github.com/micro-services-roadmap/atom-kit/redis/rconfig"
+	"github.com/micro-services-roadmap/atom-kit/zapx/config"
 )
 
 type Server struct {

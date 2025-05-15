@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
-	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
-	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/gormx/initialize"
+	"github.com/micro-services-roadmap/atom-kit/gormx/tenant"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
 	"gorm.io/gorm"
 )
 

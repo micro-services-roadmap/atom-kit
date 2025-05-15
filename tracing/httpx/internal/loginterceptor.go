@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/micro-services-roadmap/kit-common/logx"
+	"github.com/micro-services-roadmap/atom-kit/logx"
 
 	"go.opentelemetry.io/otel/propagation"
 )

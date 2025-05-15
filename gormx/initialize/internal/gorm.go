@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	kg "github.com/micro-services-roadmap/kit-common/kg"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"

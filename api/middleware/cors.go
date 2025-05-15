@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/micro-services-roadmap/kit-common/api/aconfig"
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/api/aconfig"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 )
 
 // Cors 直接放行所有跨域请求并放行所有 OPTIONS 方法

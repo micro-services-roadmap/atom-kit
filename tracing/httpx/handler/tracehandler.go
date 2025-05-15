@@ -3,8 +3,8 @@ package handler
 import (
 	"net/http"
 
-	"github.com/micro-services-roadmap/kit-common/tracing"
-	"github.com/micro-services-roadmap/kit-common/tracing/httpx/response"
+	"github.com/micro-services-roadmap/atom-kit/tracing"
+	"github.com/micro-services-roadmap/atom-kit/tracing/httpx/response"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"

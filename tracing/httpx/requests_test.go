@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/micro-services-roadmap/kit-common/tracing/trace/tracetest"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace/tracetest"
 
-	ztrace "github.com/micro-services-roadmap/kit-common/tracing/trace"
+	ztrace "github.com/micro-services-roadmap/atom-kit/tracing/trace"
 
 	"github.com/stretchr/testify/assert"
 	tcodes "go.opentelemetry.io/otel/codes"

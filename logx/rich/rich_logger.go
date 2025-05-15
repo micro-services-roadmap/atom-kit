@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	util "github.com/micro-services-roadmap/kit-common/logx/util"
-	"github.com/micro-services-roadmap/kit-common/tracing"
-	"github.com/micro-services-roadmap/kit-common/zapx"
+	util "github.com/micro-services-roadmap/atom-kit/logx/util"
+	"github.com/micro-services-roadmap/atom-kit/tracing"
+	"github.com/micro-services-roadmap/atom-kit/zapx"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

@@ -5,7 +5,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/micro-services-roadmap/kit-common/tracing"
+	"github.com/micro-services-roadmap/atom-kit/tracing"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"

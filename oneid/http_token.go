@@ -5,8 +5,8 @@ import (
 	"errors"
 	"github.com/kongmsr/oneid-core/httpo"
 	"github.com/kongmsr/oneid-core/modelo"
-	"github.com/micro-services-roadmap/kit-common/api/response"
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/api/response"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 	"net/http"
 )
 

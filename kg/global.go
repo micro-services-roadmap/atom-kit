@@ -1,7 +1,7 @@
 package kg
 
 import (
-	"github.com/micro-services-roadmap/kit-common/viperx/vconfig"
+	"github.com/micro-services-roadmap/atom-kit/viperx/vconfig"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"

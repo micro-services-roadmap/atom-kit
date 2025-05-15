@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	kg "github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/kit-common/zapx/config"
-	"github.com/micro-services-roadmap/kit-common/zapx/internal"
-	"github.com/micro-services-roadmap/kit-common/zapx/util"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
+	"github.com/micro-services-roadmap/atom-kit/zapx/config"
+	"github.com/micro-services-roadmap/atom-kit/zapx/internal"
+	"github.com/micro-services-roadmap/atom-kit/zapx/util"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

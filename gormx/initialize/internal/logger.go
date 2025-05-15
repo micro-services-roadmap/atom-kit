@@ -3,7 +3,7 @@ package internal
 import (
 	"fmt"
 
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 
 	"github.com/zeromicro/go-zero/core/logx"
 	"gorm.io/gorm/logger"

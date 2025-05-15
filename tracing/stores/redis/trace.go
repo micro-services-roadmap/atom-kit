@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace"
 	red "github.com/redis/go-redis/v9"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"

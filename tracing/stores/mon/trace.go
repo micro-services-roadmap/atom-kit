@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.opentelemetry.io/otel/attribute"

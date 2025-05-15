@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/utilx/email"
+	"github.com/micro-services-roadmap/atom-kit/utilx/email"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -10,7 +10,7 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

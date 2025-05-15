@@ -1,8 +1,8 @@
 package viperx
 
 import (
-	kg "github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/kit-common/viperx/initialize"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
+	"github.com/micro-services-roadmap/atom-kit/viperx/initialize"
 	"github.com/spf13/viper"
 )
 

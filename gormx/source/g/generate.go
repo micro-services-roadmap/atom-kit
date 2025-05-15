@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/alice52/jasypt-go"
-	"github.com/micro-services-roadmap/kit-common/gormx/tenant"
-	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/atom-kit/gormx/tenant"
+	"github.com/micro-services-roadmap/atom-kit/kg"
 	ggy "github.com/we7coreteam/gorm-gen-yaml"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"

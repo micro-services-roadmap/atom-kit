@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	kg "github.com/micro-services-roadmap/kit-common/kg"
-	"github.com/micro-services-roadmap/kit-common/viperx"
+	kg "github.com/micro-services-roadmap/atom-kit/kg"
+	"github.com/micro-services-roadmap/atom-kit/viperx"
 )
 
 func init() {

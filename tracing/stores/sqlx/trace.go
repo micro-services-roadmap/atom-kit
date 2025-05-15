@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/atom-kit/tracing/trace"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"

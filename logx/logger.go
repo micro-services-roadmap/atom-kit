@@ -1,7 +1,7 @@
 package logx
 
 import (
-	"github.com/micro-services-roadmap/kit-common/logx/rich"
+	"github.com/micro-services-roadmap/atom-kit/logx/rich"
 )
 
 // Logger can be global replace.
